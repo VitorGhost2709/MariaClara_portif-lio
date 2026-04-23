@@ -1,0 +1,147 @@
+@import 'tailwindcss';
+
+/* Identidade visual: azul profundo (base) + bordô (destaque) */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  /* Tokens globais (use no projeto todo) */
+  --color-bg: #121e52;
+  --color-bg-deep: #0d163f; /* levemente mais escuro (profundidade) */
+  --color-bg-soft: #162563; /* levemente mais claro (separação de seções) */
+  --color-surface: #14205a; /* superfície (cards/containers) */
+
+  --color-primary: #96092b;
+  --color-primary-hover: #7c0723;
+  --color-primary-soft: #f0b0c0; /* texto pequeno/indicadores */
+  --color-primary-glow: rgba(150, 9, 43, 0.45);
+
+  --color-text: #f8fafc; /* quase branco */
+  --color-text-muted: #cbd5e1; /* slate-300 */
+  --color-text-muted-2: #94a3b8; /* slate-400 */
+
+  /* Alias para nomes já usados nas classes Tailwind (evita refactor grande) */
+  --color-page: var(--color-bg);
+  --color-ink: var(--color-text);
+  --color-muted: var(--color-text-muted);
+  --color-muted-light: var(--color-text-muted);
+
+  --color-brand: var(--color-primary);
+  --color-brand-hover: var(--color-primary-hover);
+  --color-brand-soft: var(--color-primary-soft);
+  --color-brand-glow: var(--color-primary-glow);
+
+  --color-navy: var(--color-bg);
+  --color-navy-mid: var(--color-bg-soft);
+  --color-navy-card: var(--color-surface);
+  --color-navy-elevated: #182a70;
+
+  /* “gold” vira neutro (não cria uma 3ª cor de destaque) */
+  --color-gold: #ffffff;
+  --color-gold-bright: #e2e8f0; /* slate-200 */
+  --color-gold-dim: #94a3b8; /* slate-400 */
+
+  --color-line: rgba(226, 232, 240, 0.9);
+  --color-line-dark: rgba(255, 255, 255, 0.08);
+
+  --shadow-premium: 0 24px 48px -12px rgba(12, 18, 34, 0.35);
+  --shadow-card: 0 4px 28px -10px rgba(12, 18, 34, 0.1);
+  --shadow-card-hover: 0 22px 48px -14px rgba(150, 9, 43, 0.14);
+  --shadow-glow-brand: 0 0 40px -8px var(--color-brand-glow);
+  --radius-card: 1rem;
+  --radius-card-lg: 1.35rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade-up: fade-up 0.75s var(--ease-out-expo) both;
+  --animate-fade-up-slow: fade-up 0.95s var(--ease-out-expo) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ambient-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.03);
+  }
+}
+
+@keyframes ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(16px, -8px, 0);
+  }
+}
+
+@keyframes subtle-shine {
+  0% {
+    transform: translateX(-170%) skewX(-20deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.32;
+  }
+  45%,
+  100% {
+    transform: translateX(190%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy font-sans text-slate-200 antialiased;
+    margin: 0;
+    min-height: 100svh;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+}
+
+@utility transition-premium {
+  transition-property: transform, box-shadow, border-color, background-color, color,
+    opacity;
+  transition-duration: 300ms;
+  transition-timing-function: var(--ease-out-expo);
+}
+
+@utility ambient-float {
+  animation: ambient-float 14s ease-in-out infinite;
+}
+
+@utility ambient-drift {
+  animation: ambient-drift 20s ease-in-out infinite;
+}
+
+@utility subtle-shine {
+  animation: subtle-shine 4.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-float,
+  .ambient-drift,
+  .subtle-shine {
+    animation: none !important;
+  }
+}
