@@ -1,5 +1,5 @@
 interface SectionHeadingProps {
-  eyebrow: string
+  eyebrow?: string
   title: string
   description?: string
   align?: 'left' | 'center'
@@ -19,11 +19,13 @@ export function SectionHeading({
 
   return (
     <div className={`mb-12 max-w-2xl md:mb-16 ${alignClass}`}>
-      <p
-        className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${isDark ? 'text-gold' : 'text-brand'}`}
-      >
-        {eyebrow}
-      </p>
+      {eyebrow ? (
+        <p
+          className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${isDark ? 'text-gold' : 'text-brand'}`}
+        >
+          {eyebrow}
+        </p>
+      ) : null}
       <h2
         className={`font-display text-3xl font-semibold tracking-tight md:text-4xl ${isDark ? 'text-white' : 'text-ink'}`}
       >

@@ -2,7 +2,7 @@ import { Container } from '../components/Container'
 
 export function Fechamento() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-navy py-20 md:py-28">
+    <section className="relative overflow-hidden border-t border-white/10 bg-navy/65 py-20 md:py-28">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(150,9,43,0.22),transparent)]"
         aria-hidden
@@ -11,7 +11,7 @@ export function Fechamento() {
         className="pointer-events-none absolute bottom-0 left-1/2 h-px w-3/4 max-w-2xl -translate-x-1/2 bg-gradient-to-r from-transparent via-gold/40 to-transparent"
         aria-hidden
       />
-      <Container className="relative">
+      <Container className="relative z-10">
         <div className="mx-auto max-w-3xl animate-fade-up text-center">
           <h2 className="font-display text-2xl font-semibold leading-snug text-white md:text-3xl lg:text-[2rem]">
             Pronto para transformar seu consultório em uma referência digital?

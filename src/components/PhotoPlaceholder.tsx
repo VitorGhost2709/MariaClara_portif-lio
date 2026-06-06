@@ -21,7 +21,7 @@ export function PhotoPlaceholder({
 
   return (
     <div
-      className={`relative flex flex-col overflow-hidden border-2 bg-gradient-to-br from-white/[0.06] to-transparent text-center ${
+      className={`relative flex flex-col overflow-hidden border-2 bg-navy-card bg-gradient-to-br from-white/[0.06] to-transparent text-center ${
         isHero
           ? 'h-[5.25rem] w-[5.25rem] shrink-0 rounded-2xl border-white/15 md:h-[6rem] md:w-[6rem]'
           : 'aspect-[3/4] w-full max-w-sm rounded-2xl border-white/12 shadow-[0_24px_56px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.05]'

@@ -17,7 +17,7 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy via-navy to-navy-mid"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/55 to-navy-mid/70"
         aria-hidden
       />
       <div
@@ -34,7 +34,7 @@ export function Hero() {
         <span className="ambient-float absolute left-[30%] bottom-[22%] h-2 w-2 rounded-full bg-white/30 blur-[1.5px]" />
       </div>
 
-      <Container className="relative">
+      <Container className="relative z-10">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-[4.5rem]">
           <StaggerReveal className="space-y-0" delayChildren={0.05} staggerChildren={0.09}>
             <StaggerItem>
@@ -77,7 +77,7 @@ export function Hero() {
               aria-hidden
             />
             <motion.div
-              className="relative flex flex-col gap-5 overflow-hidden rounded-[1.35rem] border border-white/[0.1] bg-navy-card/95 p-6 shadow-premium backdrop-blur-sm transition-premium hover:border-brand/30 hover:shadow-[0_0_60px_-12px_rgba(150,9,43,0.22)] md:p-8"
+              className="relative flex flex-col gap-5 overflow-hidden rounded-[1.35rem] border border-white/[0.1] bg-navy-card p-6 shadow-premium backdrop-blur-sm transition-premium hover:border-brand/30 hover:shadow-[0_0_60px_-12px_rgba(150,9,43,0.22)] md:p-8"
               initial={prefersReducedMotion ? false : { scale: 0.985 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.24 }}

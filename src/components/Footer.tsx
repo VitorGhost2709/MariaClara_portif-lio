@@ -3,7 +3,7 @@ import { instagramUrl, whatsappDisplay, whatsappUrl } from '../data/contact'
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-navy-mid py-14 text-slate-300">
+    <footer className="relative z-10 border-t border-white/10 bg-navy-mid/90 py-14 text-slate-300">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">

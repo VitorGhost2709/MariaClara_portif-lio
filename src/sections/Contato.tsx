@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/motion/Reveal'
-import instagramLogo from '../pictures/instagramlogo.png'
+import instagramLogo from '../pictures/instagramlogo-80.png'
 import whatsappIcon from '../pictures/whatsapp.png'
 import { instagramUrl, whatsappDisplay, whatsappUrl } from '../data/contact'
 
@@ -127,7 +127,7 @@ export function Contato() {
   return (
     <section
       id="diagnostico"
-      className="relative scroll-mt-28 overflow-hidden border-t border-white/10 bg-gradient-to-b from-navy-mid via-navy to-navy-mid py-20 md:scroll-mt-32 md:py-28"
+      className="relative scroll-mt-28 overflow-hidden border-t border-white/10 bg-gradient-to-b from-navy-mid/75 via-navy/65 to-navy-mid/75 py-20 md:scroll-mt-32 md:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_20%_20%,rgba(150,9,43,0.12),transparent),radial-gradient(ellipse_55%_45%_at_100%_80%,rgba(150,9,43,0.05),transparent)]"
@@ -137,9 +137,9 @@ export function Contato() {
         className="pointer-events-none ambient-float absolute left-1/2 top-14 h-80 w-80 -translate-x-1/2 rounded-full bg-brand/15 blur-3xl"
         aria-hidden
       />
-      <Container className="relative">
+      <Container className="relative z-10">
         <form
-          className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-navy-card/90 p-8 shadow-[0_28px_64px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.05] backdrop-blur-sm md:gap-5 md:p-12 lg:p-14"
+          className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-navy-card p-8 shadow-[0_28px_64px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.05] backdrop-blur-sm md:gap-5 md:p-12 lg:p-14"
           onSubmit={handleSubmit}
           aria-label="Formulário de diagnóstico"
           noValidate
@@ -167,7 +167,7 @@ export function Contato() {
                     onChange={handleChange('nome')}
                     aria-invalid={errors.nome ? 'true' : 'false'}
                     aria-describedby={errors.nome ? 'nome-erro' : undefined}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
                   />
                   {errors.nome ? (
                     <p id="nome-erro" className="mt-1.5 text-xs text-rose-300">
@@ -191,7 +191,7 @@ export function Contato() {
                     onChange={handleChange('email')}
                     aria-invalid={errors.email ? 'true' : 'false'}
                     aria-describedby={errors.email ? 'email-erro' : undefined}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
                   />
                   {errors.email ? (
                     <p id="email-erro" className="mt-1.5 text-xs text-rose-300">
@@ -200,29 +200,7 @@ export function Contato() {
                   ) : null}
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="procedimento"
-                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
-                  >
-                    Qual o procedimento que você mais deseja vender hoje?
-                  </label>
-                  <input
-                    id="procedimento"
-                    name="procedimento"
-                    type="text"
-                    placeholder="Implantes, Invisalign, Limpezas"
-                    value={formData.procedimento}
-                    onChange={handleChange('procedimento')}
-                    aria-invalid={errors.procedimento ? 'true' : 'false'}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
-                  />
-                  {errors.procedimento ? (
-                    <p className="mt-1.5 text-xs text-rose-300">{errors.procedimento}</p>
-                  ) : null}
-                </div>
-
-                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/40 p-4">
+                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4">
                   <legend className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Qual o seu principal objetivo hoje?
                   </legend>
@@ -254,29 +232,6 @@ export function Contato() {
                   </label>
                   {errors.objetivo ? <p className="text-xs text-rose-300">{errors.objetivo}</p> : null}
                 </fieldset>
-              </div>
-            </Reveal>
-
-            <Reveal className="flex w-full flex-col" delay={0.14} duration={0.95} y={16}>
-              <div className="space-y-5">
-                <div>
-                  <label
-                    htmlFor="instagram"
-                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
-                  >
-                    Qual o seu @ do Instagram?
-                  </label>
-                  <input
-                    id="instagram"
-                    name="instagram"
-                    type="text"
-                    value={formData.instagram}
-                    onChange={handleChange('instagram')}
-                    aria-invalid={errors.instagram ? 'true' : 'false'}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
-                  />
-                  {errors.instagram ? <p className="mt-1.5 text-xs text-rose-300">{errors.instagram}</p> : null}
-                </div>
 
                 <div>
                   <label
@@ -292,35 +247,18 @@ export function Contato() {
                     value={formData.tempoFormado}
                     onChange={handleChange('tempoFormado')}
                     aria-invalid={errors.tempoFormado ? 'true' : 'false'}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
                   />
                   {errors.tempoFormado ? (
                     <p className="mt-1.5 text-xs text-rose-300">{errors.tempoFormado}</p>
                   ) : null}
                 </div>
+              </div>
+            </Reveal>
 
-                <div>
-                  <label
-                    htmlFor="faturamentoMensal"
-                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
-                  >
-                    Qual a sua média de faturamento mensal atual?
-                  </label>
-                  <input
-                    id="faturamentoMensal"
-                    name="faturamentoMensal"
-                    type="text"
-                    value={formData.faturamentoMensal}
-                    onChange={handleChange('faturamentoMensal')}
-                    aria-invalid={errors.faturamentoMensal ? 'true' : 'false'}
-                    className="w-full rounded-xl border border-white/12 bg-navy-mid/70 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
-                  />
-                  {errors.faturamentoMensal ? (
-                    <p className="mt-1.5 text-xs text-rose-300">{errors.faturamentoMensal}</p>
-                  ) : null}
-                </div>
-
-                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/40 p-4">
+            <Reveal className="flex w-full flex-col" delay={0.14} duration={0.95} y={16}>
+              <div className="space-y-5">
+                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4">
                   <legend className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Você já investe em tráfego pago atualmente?
                   </legend>
@@ -358,6 +296,68 @@ export function Contato() {
                   </label>
                   {errors.investeTrafego ? <p className="text-xs text-rose-300">{errors.investeTrafego}</p> : null}
                 </fieldset>
+
+                <div>
+                  <label
+                    htmlFor="faturamentoMensal"
+                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  >
+                    Qual a sua média de faturamento mensal atual?
+                  </label>
+                  <input
+                    id="faturamentoMensal"
+                    name="faturamentoMensal"
+                    type="text"
+                    value={formData.faturamentoMensal}
+                    onChange={handleChange('faturamentoMensal')}
+                    aria-invalid={errors.faturamentoMensal ? 'true' : 'false'}
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                  />
+                  {errors.faturamentoMensal ? (
+                    <p className="mt-1.5 text-xs text-rose-300">{errors.faturamentoMensal}</p>
+                  ) : null}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="procedimento"
+                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  >
+                    Qual o procedimento que você mais deseja vender hoje?
+                  </label>
+                  <input
+                    id="procedimento"
+                    name="procedimento"
+                    type="text"
+                    placeholder="Implantes, Invisalign, Limpezas"
+                    value={formData.procedimento}
+                    onChange={handleChange('procedimento')}
+                    aria-invalid={errors.procedimento ? 'true' : 'false'}
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                  />
+                  {errors.procedimento ? (
+                    <p className="mt-1.5 text-xs text-rose-300">{errors.procedimento}</p>
+                  ) : null}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="instagram"
+                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  >
+                    Qual o seu @ do Instagram?
+                  </label>
+                  <input
+                    id="instagram"
+                    name="instagram"
+                    type="text"
+                    value={formData.instagram}
+                    onChange={handleChange('instagram')}
+                    aria-invalid={errors.instagram ? 'true' : 'false'}
+                    className="w-full rounded-xl border border-white/12 bg-navy-mid px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-premium placeholder:text-slate-500 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25"
+                  />
+                  {errors.instagram ? <p className="mt-1.5 text-xs text-rose-300">{errors.instagram}</p> : null}
+                </div>
               </div>
             </Reveal>
           </div>

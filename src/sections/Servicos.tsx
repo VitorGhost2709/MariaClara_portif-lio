@@ -8,26 +8,26 @@ export function Servicos() {
   return (
     <section
       id="planos"
-      className="relative scroll-mt-28 overflow-hidden border-b border-white/10 bg-navy-mid py-20 md:scroll-mt-32 md:py-28"
+      className="relative scroll-mt-28 overflow-hidden border-b border-white/10 bg-navy-mid/70 py-20 md:scroll-mt-32 md:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_0%_30%,rgba(150,9,43,0.1),transparent)]"
         aria-hidden
       />
-      <Container className="relative">
+      <Container className="relative z-10">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
             Planos Oferecidos
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-white md:text-3xl">
-            Planos Oferecidos
+            Planos Oferecidos:
           </h2>
         </div>
 
         <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2" staggerChildren={0.09}>
           <StaggerItem>
             <motion.article
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-card/90 p-8 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] ring-1 ring-white/[0.04] backdrop-blur-sm transition-premium hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_28px_56px_-14px_rgba(150,9,43,0.25)] md:p-9"
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-card p-8 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] ring-1 ring-white/[0.04] backdrop-blur-sm transition-premium hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_28px_56px_-14px_rgba(150,9,43,0.25)] md:p-9"
               whileHover={
                 prefersReducedMotion ? undefined : { y: -6 }
               }
@@ -64,7 +64,7 @@ export function Servicos() {
 
           <StaggerItem>
             <motion.article
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand/35 bg-gradient-to-br from-navy-card via-navy-mid to-navy-card p-8 shadow-[0_28px_64px_-20px_rgba(0,0,0,0.55)] ring-1 ring-brand/15 backdrop-blur-sm transition-premium hover:-translate-y-1 hover:border-brand/55 hover:shadow-[0_34px_72px_-18px_rgba(150,9,43,0.28)] md:p-9"
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand/35 bg-navy-card p-8 shadow-[0_28px_64px_-20px_rgba(0,0,0,0.55)] ring-1 ring-brand/15 backdrop-blur-sm transition-premium hover:-translate-y-1 hover:border-brand/55 hover:shadow-[0_34px_72px_-18px_rgba(150,9,43,0.28)] md:p-9"
               whileHover={
                 prefersReducedMotion ? undefined : { y: -6 }
               }
