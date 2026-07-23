@@ -113,6 +113,8 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--color-bg);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(20, 184, 166, 0.28) rgba(6, 6, 16, 0.35);
   }
 
   body {
@@ -124,6 +126,25 @@
     font-weight: 400;
     letter-spacing: 0.01em;
     line-height: 1.6;
+  }
+
+  /* Scrollbar minimalista (Chrome/Edge/Safari) */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(6, 6, 16, 0.35);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(20, 184, 166, 0.22);
+    border-radius: 999px;
+    border: 2px solid rgba(6, 6, 16, 0.35);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(20, 184, 166, 0.38);
   }
 
   /* Grid + grain cósmicos sutis (visíveis onde não houver fundo opaco por cima) */
