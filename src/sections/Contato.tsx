@@ -200,38 +200,46 @@ export function Contato() {
                   ) : null}
                 </div>
 
-                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4">
-                  <legend className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <div>
+                  <p
+                    id="objetivo-label"
+                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  >
                     Qual o seu principal objetivo hoje?
-                  </legend>
-                  <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
-                    <input
-                      type="radio"
-                      name="objetivo"
-                      value="Delegar a gestão para ter mais tempo"
-                      checked={formData.objetivo === 'Delegar a gestão para ter mais tempo'}
-                      onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, objetivo: e.target.value as FormData['objetivo'] }))
-                      }
-                      className="h-4 w-4 accent-[var(--color-brand)]"
-                    />
-                    Delegar a gestão para ter mais tempo
-                  </label>
-                  <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
-                    <input
-                      type="radio"
-                      name="objetivo"
-                      value="Escalar o faturamento e atrair novos pacientes"
-                      checked={formData.objetivo === 'Escalar o faturamento e atrair novos pacientes'}
-                      onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, objetivo: e.target.value as FormData['objetivo'] }))
-                      }
-                      className="h-4 w-4 accent-[var(--color-brand)]"
-                    />
-                    Escalar o faturamento e atrair novos pacientes
-                  </label>
-                  {errors.objetivo ? <p className="text-xs text-rose-300">{errors.objetivo}</p> : null}
-                </fieldset>
+                  </p>
+                  <fieldset
+                    aria-labelledby="objetivo-label"
+                    className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4"
+                  >
+                    <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
+                      <input
+                        type="radio"
+                        name="objetivo"
+                        value="Delegar a gestão para ter mais tempo"
+                        checked={formData.objetivo === 'Delegar a gestão para ter mais tempo'}
+                        onChange={(e) =>
+                          setFormData((prev) => ({ ...prev, objetivo: e.target.value as FormData['objetivo'] }))
+                        }
+                        className="h-4 w-4 accent-[var(--color-brand)]"
+                      />
+                      Delegar a gestão para ter mais tempo
+                    </label>
+                    <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
+                      <input
+                        type="radio"
+                        name="objetivo"
+                        value="Escalar o faturamento e atrair novos pacientes"
+                        checked={formData.objetivo === 'Escalar o faturamento e atrair novos pacientes'}
+                        onChange={(e) =>
+                          setFormData((prev) => ({ ...prev, objetivo: e.target.value as FormData['objetivo'] }))
+                        }
+                        className="h-4 w-4 accent-[var(--color-brand)]"
+                      />
+                      Escalar o faturamento e atrair novos pacientes
+                    </label>
+                    {errors.objetivo ? <p className="text-xs text-rose-300">{errors.objetivo}</p> : null}
+                  </fieldset>
+                </div>
 
                 <div>
                   <label
@@ -258,44 +266,52 @@ export function Contato() {
 
             <Reveal className="flex w-full flex-col" delay={0.14} duration={0.95} y={16}>
               <div className="space-y-5">
-                <fieldset className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4">
-                  <legend className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <div>
+                  <p
+                    id="investeTrafego-label"
+                    className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  >
                     Você já investe em tráfego pago atualmente?
-                  </legend>
-                  <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
-                    <input
-                      type="radio"
-                      name="investeTrafego"
-                      value="Sim"
-                      checked={formData.investeTrafego === 'Sim'}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          investeTrafego: e.target.value as FormData['investeTrafego'],
-                        }))
-                      }
-                      className="h-4 w-4 accent-[var(--color-brand)]"
-                    />
-                    Sim
-                  </label>
-                  <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
-                    <input
-                      type="radio"
-                      name="investeTrafego"
-                      value="Não"
-                      checked={formData.investeTrafego === 'Não'}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          investeTrafego: e.target.value as FormData['investeTrafego'],
-                        }))
-                      }
-                      className="h-4 w-4 accent-[var(--color-brand)]"
-                    />
-                    Não
-                  </label>
-                  {errors.investeTrafego ? <p className="text-xs text-rose-300">{errors.investeTrafego}</p> : null}
-                </fieldset>
+                  </p>
+                  <fieldset
+                    aria-labelledby="investeTrafego-label"
+                    className="space-y-3 rounded-xl border border-white/12 bg-navy-mid/80 p-4"
+                  >
+                    <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
+                      <input
+                        type="radio"
+                        name="investeTrafego"
+                        value="Sim"
+                        checked={formData.investeTrafego === 'Sim'}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            investeTrafego: e.target.value as FormData['investeTrafego'],
+                          }))
+                        }
+                        className="h-4 w-4 accent-[var(--color-brand)]"
+                      />
+                      Sim
+                    </label>
+                    <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-200">
+                      <input
+                        type="radio"
+                        name="investeTrafego"
+                        value="Não"
+                        checked={formData.investeTrafego === 'Não'}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            investeTrafego: e.target.value as FormData['investeTrafego'],
+                          }))
+                        }
+                        className="h-4 w-4 accent-[var(--color-brand)]"
+                      />
+                      Não
+                    </label>
+                    {errors.investeTrafego ? <p className="text-xs text-rose-300">{errors.investeTrafego}</p> : null}
+                  </fieldset>
+                </div>
 
                 <div>
                   <label
@@ -386,12 +402,12 @@ export function Contato() {
             </motion.button>
           </div>
 
-          <div className="flex flex-col items-stretch gap-3 border-t border-white/10 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
+          <div className="flex flex-col items-stretch gap-3 border-t border-white/10 pt-12 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 sm:pt-8">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_-8px_rgba(150,9,43,0.5)] transition-premium hover:-translate-y-0.5 hover:bg-brand-hover sm:w-auto sm:min-w-[12rem] sm:px-8"
+              className="group inline-flex w-full max-w-full items-center justify-center gap-2.5 rounded-full bg-brand px-4 py-3.5 text-sm font-semibold leading-snug text-white shadow-[0_0_40px_-8px_rgba(150,9,43,0.5)] transition-premium hover:-translate-y-0.5 hover:bg-brand-hover sm:w-auto sm:min-w-[12rem] sm:px-8"
             >
               <img
                 src={whatsappIcon}
@@ -402,13 +418,21 @@ export function Contato() {
                 className="h-[1.375rem] w-[1.375rem] shrink-0 rounded-full object-cover ring-2 ring-white/25 transition-transform duration-300 group-hover:scale-105"
                 aria-hidden
               />
-              Chamar no WhatsApp — {whatsappDisplay}
+              <span className="flex min-w-0 flex-col items-center text-center whitespace-normal sm:flex-row sm:gap-1.5 sm:whitespace-nowrap">
+                <span>Chamar no WhatsApp</span>
+                <span className="hidden sm:inline" aria-hidden>
+                  —
+                </span>
+                <span className="text-xs font-medium opacity-80 sm:text-sm sm:font-semibold sm:opacity-100">
+                  {whatsappDisplay}
+                </span>
+              </span>
             </a>
             <a
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] py-3 text-sm font-semibold text-slate-200 transition-premium hover:border-brand/40 hover:bg-brand/15 sm:w-auto sm:min-w-[12rem] sm:px-8"
+              className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-slate-200 transition-premium hover:border-brand/40 hover:bg-brand/15 sm:w-auto sm:min-w-[12rem] sm:px-8"
             >
               <img
                 src={instagramLogo}
